@@ -1,5 +1,24 @@
 {
+  "name": "messages-api",
+  "version": "1.0.0",
+  "description": "API for messages service for Superbox mobile app",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnilan/messages-api.git"
+  },
+  "author": "Dexter's Laboratory, Inc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pnilan/messages-api/issues"
+  },
+  "homepage": "https://github.com/pnilan/messages-api#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
     "node": "^20.5.0",
@@ -8,6 +27,7 @@
   },
   "devDependencies": {
     "jest": "^29.6.2",
+    "nodemon": "^3.0.1",
     "supertest": "^6.3.3"
   }
 }
