@@ -1,7 +1,6 @@
 const { firebase } = require('../server.js');
 const { getAuth } = require('firebase-admin/auth');
 
-
 module.exports = {
 
   decodeToken: (req, res, next) => {
