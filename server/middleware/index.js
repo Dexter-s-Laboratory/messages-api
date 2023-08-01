@@ -12,29 +12,29 @@ module.exports = {
       return next();
     } else {
       getAuth(firebase)
-      .verifyIdToken(token)
-      .then((decodedToken) => {
-        req.headers.uid = decodedToken.uid;
-        return decodedToken.uid;
-      })
-      .catch((err) => {
+        .verifyIdToken(token)
+        .then((decodedToken) => {
+          req.headers.uid = decodedToken.uid;
+          return decodedToken.uid;
+        })
+        .catch((err) => {
           console.error('Error decoding token:', err);
           res.status(403).send({ error: err });
-      });
-      .then((uid) => {
+        })
+        .then((uid) => {
           return db.query('SELECT id FROM users WHERE uid = $1', [uid]);
-      })
-      .then((userId) => {
-          if (!userId) => {
+        })
+        .then((userId) => {
+          if (!userId) {
             res.status(404).end();
           } else {
             req.headers.userId = userId;
           }
-      })
-      .catch((err) => {
-        console.error('Error retrieving user_id from database:', err);
-        res.status(500).end();
-      })
+        })
+        .catch((err) => {
+          console.error('Error retrieving user_id from database:', err);
+          res.status(500).end();
+        });
     }
 
   }
