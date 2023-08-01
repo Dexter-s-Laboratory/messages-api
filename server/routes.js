@@ -5,7 +5,7 @@ var router = require('express').Router();
 router.get('/conversations', controller.getConversations);
 
 // GET /api/messages/:conversation_id (authentication required)
-router.get('/messages/:conversation_id', controller.getMessagesByConversationId)
+router.get('/messages/:conversation_id', controller.getMessagesByConversationId);
 
 // POST /api/messages/ (authentication required)
 router.post('/messages', controller.createMessage);
