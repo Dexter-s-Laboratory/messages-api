@@ -1,8 +1,8 @@
 var controller = require('./controllers');
 var router = require('express').Router();
 
-// GET /api/messages/ (authentication required)
-router.get('/messages', controller.getMessages);
+// GET /api/conversations/ (authentication required)
+router.get('/conversations', controller.getConversations);
 
 // GET /api/messages/:conversation_id (authentication required)
 router.get('/messages/:conversation_id', controller.getMessagesByConversationId)
