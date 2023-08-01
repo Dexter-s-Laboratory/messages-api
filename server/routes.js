@@ -1,12 +1,20 @@
 var controller = require('./controllers');
 var router = require('express').Router();
 
-//Connect controller methods to their corresponding routes
-router.get('/example/:product_id', controller.example.get);
+// GET /api/messages/ (authentication required)
+router.get('/messages', controller.getMessages);
 
-router.post('/example', controller.example.post);
+// GET /api/messages/:conversation_id (authentication required)
+router.get('/messages/:conversation_id', controller.getMessagesByConversationId)
 
-router.get('/', controller.rootJestTest.get)
+// POST /api/messages/ (authentication required)
+router.post('/messages', controller.createMessage);
+
+// PUT /api/conversations/:conversation_id/archive (authentication required)
+router.put('/conversations/:conversation_id/archive', controller.archiveConversation);
+
+// DELETE /api/messages/:message_id (authentication required)
+router.delete('/messages/:message_id', controller.deleteMessage);
 
 module.exports = router;
 
