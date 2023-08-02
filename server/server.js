@@ -8,7 +8,7 @@ const router = require('./routes.js');
 const { decodeToken } = require('./middleware');
 
 
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 app.use(express.json());
 
 app.use(decodeToken);
