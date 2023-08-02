@@ -17,7 +17,7 @@ app.get('/test', (req, res) => {
   res.send('hello world');
 });
 
-app.use('/api', router);
+app.use('/api/m', router);
 
 app.all('/', (req, res) => {
   res.status(404).end();
