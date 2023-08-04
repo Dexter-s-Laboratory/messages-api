@@ -30,6 +30,7 @@ module.exports = {
             } else {
               req.headers.userId = result[0].id;
             }
+          return next();
         })
         .catch((err) => {
           console.error('Error retrieving user_id from database:', err);
